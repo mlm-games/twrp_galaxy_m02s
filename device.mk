@@ -5,3 +5,7 @@
 #
 
 LOCAL_PATH := device/samsung/m02s
+
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/addons,recovery/root/system/addon.d)
