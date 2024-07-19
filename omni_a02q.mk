@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, vendor/twrp/Android.mk)
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
@@ -21,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Copy product files
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a20s/recovery/root,recovery/root)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a02q/recovery/root,recovery/root)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a02q
