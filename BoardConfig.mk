@@ -41,23 +41,23 @@ TARGET_USES_UEFI := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 androidboot.usbconfigfs=true vmalloc=300M loop.max_part=7
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --header_version 2 --board SRPTG29A004
+#BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --header_version 2 --board SRPTG29A004
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-#TARGET_KERNEL_SOURCE := $kernel/samsung/m02s
-#TARGET_KERNEL_CONFIG := a02q_swa_ins_defconfig
+#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+TARGET_KERNEL_SOURCE := kernel/samsung/m02s
+TARGET_KERNEL_CONFIG := a02q_swa_ins_defconfig
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_SECOND_OFFSET := 0x00f00000
 BOARD_DTB_OFFSET := 0x101f00000
-BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+#BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+#BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 
 

@@ -29,3 +29,15 @@
 # SD Card & USB-OTG Points
 /external_sd        vfat         /dev/block/mmcblk1p1  /dev/block/mmcblk1        flags=display="MicroSD Card";storage;wipeingui;removable
 /usb-otg            auto         /dev/block/sda1       /dev/block/sda            flags=display="USB-OTG";storage;wipeingui;removable
+
+# Additional partitions
+/system_ext          ext4    /dev/block/mapper/system_ext                   flags=display="System Ext";backup=1;wipeingui
+/system_ext          erofs   /dev/block/mapper/system_ext                   flags=display="System Ext";backup=1;wipeingui
+/vendor_dlkm         ext4    /dev/block/mapper/vendor_dlkm                  flags=display="Vendor DLKM";backup=1;wipeingui
+/vendor_dlkm         erofs   /dev/block/mapper/vendor_dlkm                  flags=display="Vendor DLKM";backup=1;wipeingui
+/system_dlkm         ext4    /dev/block/mapper/system_dlkm                  flags=display="System DLKM";backup=1;wipeingui
+/system_dlkm         erofs   /dev/block/mapper/system_dlkm                  flags=display="System DLKM";backup=1;wipeingui
+/mi_ext              ext4    /dev/block/mapper/mi_ext                       flags=display="Mi Ext";backup=1;wipeingui
+/mi_ext              erofs   /dev/block/mapper/mi_ext                       flags=display="Mi Ext";backup=1;wipeingui
+/metadata            ext4    /dev/block/bootdevice/by-name/metadata         flags=display="Metadata";backup=1
+/persist             ext4    /dev/block/bootdevice/by-name/persist          flags=display="Persist";backup=1
