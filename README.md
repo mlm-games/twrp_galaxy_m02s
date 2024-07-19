@@ -8,4 +8,4 @@ OG-TWRP-trees -> https://github.com/ravindu644/twrp_galaxy_m02s
 
 Kernel-source -> https://github.com/raihan2000/Samsung-M02s-Kernel
 
-Addons by smileey
+Addons -> smiley9000

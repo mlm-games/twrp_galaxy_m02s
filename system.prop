@@ -1,6 +1,6 @@
 ro.display.series=Samsung Galaxy M02s
 
-ro.product.board=QC_Reference_Phone
+ro.product.board=msm8953
 ro.board.platform=msm8953
 
 sys.usb.controller=7000000.dwc3
