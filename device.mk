@@ -21,4 +21,4 @@ PRODUCT_PACKAGES += \
     tcs3430
 
 #PRODUCT_PACKAGES += \
-    android.hardware.input.classifier@1.0-service \
+#    android.hardware.input.classifier@1.0-service \

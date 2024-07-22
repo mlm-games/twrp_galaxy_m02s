@@ -104,10 +104,9 @@ TW_NO_REBOOT_BOOTLOADER := true
 #TWRP_EXCLUDE_TWRPAPP := true
 
 #Try for fixing touch
-# And replace it with:
 TW_LOAD_VENDOR_MODULES := $(strip $(shell cat $(DEVICE_PATH)/recovery/root/vendor/lib/modules.load))
-#TW_LOAD_VENDOR_BOOT_MODULES := true
-#TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # System as root
 BOARD_ROOT_EXTRA_FOLDERS := cache carrier efs optics prism omr odm socko odmko
