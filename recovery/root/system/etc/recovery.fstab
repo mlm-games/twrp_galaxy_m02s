@@ -43,7 +43,7 @@ odm                                       /odm            ext4      ro,barrier=1
 /dev/block/bootdevice/by-name/recovery    /recovery       emmc      defaults                                                                                   recoveryonly
 /dev/block/bootdevice/by-name/userdata    /data           f2fs      noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678    wait,encryptable=footer,length=-16384
 /dev/block/bootdevice/by-name/cache       /cache          ext4      defaults                                                                                   recoveryonly
-/dev/block/mmcblk0p1                      /sdcard         vfat      defaults                                                                                   recoveryonly
+#/dev/block/mmcblk0p1                      /sdcard         vfat      defaults                                                                                   recoveryonly
 /dev/block/bootdevice/by-name/sec_efs     /efs            ext4      defaults                                                                                   recoveryonly
 /dev/block/bootdevice/by-name/sec_efs     /sec_efs        ext4      defaults                                                                                   recoveryonly
 /dev/block/bootdevice/by-name/carrier     /carrier        ext4      defaults                                                                                   recoveryonly
@@ -69,4 +69,4 @@ odm                                       /odm            ext4      ro,barrier=1
 
 # Removable storage
 /external_sd     vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable
-/usb-otg         auto    /dev/block/sda1         /dev/block/sda      flags=display="USB-OTG";storage;wipeingui;removable
+/usb-otg         auto    /dev/block/sda1         /dev/block/sda      flags=display="USB-OTG";storage;removable

@@ -62,8 +62,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export FOX_VERSION="R11.1_1"
 		export OF_SCREEN_H="2000"
 		export OF_HIDE_NOTCH=1
-		#export OF_CLOCK_POS=1
-		#export TARGET_ARCH=arm64
+		export OF_CLOCK_POS=1
+		export TARGET_ARCH=arm64
 		#export OF_ALLOW_DISABLE_NAVBAR=0
 		export TARGET_DEVICE_ALT="a02qnaxx,a02s, a025g, a025f, a02q, m02s, m025f, m025g, m02q"
 		export FOX_TARGET_DEVICES="a02s, a025g, a025f, a02q"
@@ -71,7 +71,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		#export OF_USE_TWRP_SAR_DETECT=1
 		export OF_QUICK_BACKUP_LIST="/super;/boot;/vbmeta;/vbmeta_samsung;/dtbo;"
 		#export FOX_USE_UNZIP_BINARY=1
-		#export FOX_ENABLE_APP_MANAGER=1
+		export FOX_ENABLE_APP_MANAGER=1
 		export FOX_USE_XZ_UTILS=1
 		export OF_STATUS_INDENT_LEFT="48"
 		export OF_STATUS_INDENT_RIGHT="48"
