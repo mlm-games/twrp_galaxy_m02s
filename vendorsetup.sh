@@ -39,7 +39,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export ALLOW_MISSING_DEPENDENCIES=true
 		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 		export LC_ALL="C"
-		export OF_VANILLA_BUILD=0
+		#export OF_VANILLA_BUILD=0
 		export FOX_VANILLA_BUILD=1
 		export FOX_NO_SAMSUNG_SPECIAL=0
 		#export FOX_DYNAMIC_SAMSUNG_FIX=1
@@ -58,12 +58,12 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		#export FOX_DELETE_AROMAFM=1
 		export OF_FL_PATH1="/sys/class/leds/led:switch_1"
 		#export OF_FL_PATH2=""
-		export OF_FLASHLIGHT_ENABLE=1
+		#export OF_FLASHLIGHT_ENABLE=1
 		export FOX_VERSION="R11.1_1"
 		export OF_SCREEN_H="2000"
 		export OF_HIDE_NOTCH=1
-		export OF_CLOCK_POS=1
-		export TARGET_ARCH=arm64
+		#export OF_CLOCK_POS=1
+		#export TARGET_ARCH=arm64
 		#export OF_ALLOW_DISABLE_NAVBAR=0
 		export TARGET_DEVICE_ALT="a02qnaxx,a02s, a025g, a025f, a02q, m02s, m025f, m025g, m02q"
 		export FOX_TARGET_DEVICES="a02s, a025g, a025f, a02q"
@@ -71,7 +71,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		#export OF_USE_TWRP_SAR_DETECT=1
 		export OF_QUICK_BACKUP_LIST="/super;/boot;/vbmeta;/vbmeta_samsung;/dtbo;"
 		#export FOX_USE_UNZIP_BINARY=1
-		export FOX_ENABLE_APP_MANAGER=1
+		#export FOX_ENABLE_APP_MANAGER=1
 		export FOX_USE_XZ_UTILS=1
 		export OF_STATUS_INDENT_LEFT="48"
 		export OF_STATUS_INDENT_RIGHT="48"
@@ -111,10 +111,5 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		  export | grep "TW_" >> $FOX_BUILD_LOG_FILE
 		fi
 fi
-else
-	if [ -z "$FOX_BUILD_DEVICE" -a -z "$BASH_SOURCE" ]; then
-		echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
-	fi
-fi
-#
+
 
