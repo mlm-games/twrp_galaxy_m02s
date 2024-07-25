@@ -58,6 +58,8 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+BOARD_ROOT_EXTRA_SYMLINKS := /vendor/dsp:/dsp /vendor/firmware_mnt:/firmware
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
 
@@ -89,6 +91,7 @@ TW_Y_OFFSET := 79
 TW_H_OFFSET := -79
 TW_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+BOARD_USES_QCOM_HARDWARE := true
 #TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_DEVICE_VERSION := ragebreaker #use your name
 TW_USE_SAMSUNG_HAPTICS := true
