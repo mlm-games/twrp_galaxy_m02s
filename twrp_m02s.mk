@@ -16,7 +16,7 @@ $(call inherit-product, device/samsung/m02s/device.mk)
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/m02s/recovery/root,recovery/root)
 
 #Other extra stuff
-$(call inherit-product, vendor/twrp/config/packages.mk)
+#$(call inherit-product, vendor/twrp/config/packages.mk)
 
 PRODUCT_DEVICE := m02s
 PRODUCT_NAME := twrp_m02s
