@@ -6,3 +6,8 @@
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+
+#Add charger res packages
+PRODUCT_PACKAGES += \
+    charger_res_images
