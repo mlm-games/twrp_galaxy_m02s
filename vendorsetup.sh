@@ -98,7 +98,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_MAINTAINER="MLM-Games"
 
 		#prevent adb and mtp prior to entering recovery
-		export FOX_ADVANCED_SECURITY=1
+		export OF_ADVANCED_SECURITY=1
 
 		#delete installer zip debug before release
 		
