@@ -10,4 +10,4 @@ base-tree -> https://github.com/ravindu644/twrp_galaxy_m02s
 
 Kernel-source -> https://gitlab.com/mlmstudios1/m02s-kernel
 
-The touch doesnt work on inital boot but it works after turning the screen off for 5secs (maybe twice or thrice) and then turning on
+The touch doesnt work on inital boot but it works after turning the screen off for 5secs and then turning the screen on (maybe twice or thrice to verify).
