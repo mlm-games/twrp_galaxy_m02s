@@ -1,6 +1,6 @@
 # TWRP Device tree for Galaxy M02s and A02s.
 
-Tested on M02s (Does boot on A02s but careful flashing GSIs (refer this issue: https://github.com/mlm-games/twrp_galaxy_m02s/issues/5)
+Tested on M02s (Does boot on A02s but careful flashing GSIs (refer this issue: https://github.com/mlm-games/twrp_galaxy_m02s/issues/5 , Edit: actually the issue might caused by gapps being flashed later according to this [post](https://xdaforums.com/t/guide-how-to-install-aosp-gsi-on-samsung-devices-not-for-beginners.4533215/) )
 
 Check the releases and this [XDA thread](https://xdaforums.com/t/guide-m025f-flashing-a-gsi-with-and-without-twrp.4643733/) for instructions
 
