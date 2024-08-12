@@ -12,4 +12,8 @@ Kernel-source -> https://gitlab.com/mlmstudios1/m02s-kernel
 
 The touch doesnt work on inital boot but it works after turning the screen off for 5secs and then turning the screen on (maybe twice or thrice to verify).
 
+## Troubleshooting
+
+If you are not able to get it to load to twrp, flash another vbmeta.img instead of the google's null vbmeta.img
+
 You may need to factory reset or wipe data after using multidisabler and flashing magisk.zip (renaming the apk)
