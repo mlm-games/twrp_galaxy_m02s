@@ -11,3 +11,5 @@ base-tree -> https://github.com/ravindu644/twrp_galaxy_m02s
 Kernel-source -> https://gitlab.com/mlmstudios1/m02s-kernel
 
 The touch doesnt work on inital boot but it works after turning the screen off for 5secs and then turning the screen on (maybe twice or thrice to verify).
+
+You may need to factory reset or wipe data after using multidisabler and flashing magisk.zip (renaming the apk)
