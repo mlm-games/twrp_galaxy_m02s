@@ -1,6 +1,24 @@
-on boot
-    setprop ro.boot.vbmeta.avb_version 1.1
-    setprop ro.boot.avb_version 1.1
+
+# from vendor/etc/init/vendor.samsung.hardware.sysinput@1.1-service.rc
+#on early-boot
+
+
+on init
+    write /sys/class/backlight/panel0-backlight/brightness 200
+    setprop sys.usb.configfs 1
+    setprop sys.usb.ffs.aio_compat 1
+    setprop vendor.usb.controller ${sys.usb.controller}
+    setprop vendor.usb.acm_cnt 0
+    setprop vendor.usb.acm_port0 ""
+    setprop vendor.usb.acm_port1 ""
+    setprop vendor.usb.acm_enable 0
+    setprop ro.minui.default_rotation "ROTATION_NONE"
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+    wait /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode
+    write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode peripheral
+    wait /sys/class/udc/${ro.boot.usbcontroller} 1
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
