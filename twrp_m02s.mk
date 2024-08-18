@@ -4,7 +4,7 @@ PRODUCT_RELEASE_NAME := m02s
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Inherit some common twrp stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 #vendor/pb/config/common.mk for PBRP
 
