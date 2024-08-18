@@ -8,7 +8,7 @@ odm		/odm		ext4							wait,logical,first_stage_mount
 # Symlinked partitions
 /system_image    emmc    /dev/block/mapper/system                    flags=backup=1;flashimg;display="System Image"
 /vendor_image	emmc		/dev/block/bootdevice/by-name/vendor			flags=backup=0;flashimg;display="Vendor Image"
-/product_image	emmc		/dev/block/bootdevice/by-name/product			flags=backup=0;flashimg;display="Product Image"
+/product_image   emmc    /dev/block/mapper/product                   flags=backup=1;flashimg;display="Product Image"
 /odm_image       emmc    /dev/block/mapper/odm                       flags=backup=1;flashimg;display="Odm Image"
 
 # Physical partitions
