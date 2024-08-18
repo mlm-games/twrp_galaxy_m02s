@@ -8,6 +8,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_m02s.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_m02s-user \
-    twrp_m02s-userdebug \
-    twrp_m02s-eng
+    pb_m02s-user \
+    pb_m02s-userdebug \
+    pb_m02s-eng
