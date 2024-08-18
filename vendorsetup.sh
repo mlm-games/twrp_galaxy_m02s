@@ -95,7 +95,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 		# Custom pic for maintainer's about section info
 		export OF_MAINTAINER_AVATAR="$PWD/device/samsung/m02s/maintainer.png"
-		export OF_MAINTAINER="MLM-Games"
+		export OF_MAINTAINER="MLM-Studios"
 
 		#prevent adb and mtp prior to entering recovery
 		export OF_ADVANCED_SECURITY=1
