@@ -39,4 +39,4 @@ odm		    /odm		ext4							wait,logical,first_stage_mount
 /efs_image       emmc    /dev/block/bootdevice/by-name/efs           flags=backup=1;flashimg;display="EFS Image"
 /sec_efs_image   emmc    /dev/block/bootdevice/by-name/sec_efs       flags=backup=1;flashimg;display="SEC_EFS Image"
 /fsg_image       emmc    /dev/block/bootdevice/by-name/fsg           flags=backup=1;flashimg;display="FSG Image"
-/persist_image   emmc    /dev/block/bootdevice/by-name/persist		 flags=fsflags=ro;display="Persist Image";backup=1
+/persist_image   emmc    /dev/block/bootdevice/by-name/persist		 flags=display="Persist Image";backup=1;flashimg
