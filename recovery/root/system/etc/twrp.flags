@@ -3,13 +3,7 @@
 system		/system		ext4							wait,logical,first_stage_mount
 vendor		/vendor		ext4							wait,logical,first_stage_mount
 product		/product	ext4							wait,logical,first_stage_mount
-odm		/odm		ext4							wait,logical,first_stage_mount
-
-# Symlinked partitions
-/system_image    emmc    /dev/block/mapper/system                    flags=backup=1;flashimg;display="System Image"
-/vendor_image	emmc		/dev/block/bootdevice/by-name/vendor			flags=backup=0;flashimg;display="Vendor Image"
-/product_image   emmc    /dev/block/mapper/product                   flags=backup=1;flashimg;display="Product Image"
-/odm_image       emmc    /dev/block/mapper/odm                       flags=backup=1;flashimg;display="Odm Image"
+odm		    /odm		ext4							wait,logical,first_stage_mount
 
 # Physical partitions
 /metadata	ext4		/dev/block/bootdevice/by-name/metadata			flags=backup=1;display="Metadata"
@@ -30,11 +24,18 @@ odm		/odm		ext4							wait,logical,first_stage_mount
 /keydata         ext4    /dev/block/bootdevice/by-name/keydata       flags=display=keydata;wipeingui
 /keyrefuge       ext4    /dev/block/bootdevice/by-name/keyrefuge     flags=display=keyrefuge;wipeingui
 
+# Removable storage
+/external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable
+/usb-otg	auto		/dev/block/sda1	/dev/block/sda				flags=display="USB-OTG";storage;wipeingui;removable
+
+# Flashable partitions
+/system_image    emmc    /dev/block/mapper/system                    flags=backup=1;flashimg;display="System Image"
+/vendor_image	 emmc	 /dev/block/bootdevice/by-name/vendor		 flags=backup=0;flashimg;display="Vendor Image"
+/product_image   emmc    /dev/block/mapper/product                   flags=backup=1;flashimg;display="Product Image"
+/odm_image       emmc    /dev/block/mapper/odm                       flags=backup=1;flashimg;display="Odm Image"
+
 /modemst1_image  emmc    /dev/block/bootdevice/by-name/modest1       flags=backup=1;flashimg;display="MODEMST1"
 /modemst2_image  emmc    /dev/block/bootdevice/by-name/modest2       flags=backup=1;flashimg;display="MODEMST2"
 /efs_image       emmc    /dev/block/bootdevice/by-name/efs           flags=backup=1;flashimg;display="EFS Image"
 /sec_efs_image   emmc    /dev/block/bootdevice/by-name/sec_efs       flags=backup=1;flashimg;display="SEC_EFS Image"
 /fsg_image       emmc    /dev/block/bootdevice/by-name/fsg           flags=backup=1;flashimg;display="FSG Image"
-# Removable storage
-/external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable
-/usb-otg	auto		/dev/block/sda1	/dev/block/sda				flags=display="USB-OTG";storage;wipeingui;removable
