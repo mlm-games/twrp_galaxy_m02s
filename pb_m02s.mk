@@ -1,7 +1,7 @@
 
 PRODUCT_RELEASE_NAME := m02s
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # Inherit some common pb stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
