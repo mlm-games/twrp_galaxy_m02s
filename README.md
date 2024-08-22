@@ -5,7 +5,7 @@ So if anyone else has also tried, pls open an issue, i'll just remove the text a
 
 Check the releases and this [XDA thread](https://xdaforums.com/t/guide-m025f-flashing-a-gsi-with-and-without-twrp.4643733/) for instructions
 
-
+Thanks to everyone who helped and whose repositories I've used
 
 base-tree -> https://github.com/ravindu644/twrp_galaxy_m02s
 
