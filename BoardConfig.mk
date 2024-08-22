@@ -110,6 +110,9 @@ TW_NO_REBOOT_BOOTLOADER := true
 #TWRP_EVENT_LOGGING := true
 #TWRP_EXCLUDE_TWRPAPP := true
 
+# If its lun.0 ?
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+
 #Try for fixing touch
 # And replace it with:
 #TW_LOAD_VENDOR_MODULES := $(strip $(shell cat $(DEVICE_PATH)/recovery/root/vendor/lib/modules.load))
