@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pb_m02s.mk
+    $(LOCAL_DIR)/omni_m02s.mk
 
 COMMON_LUNCH_CHOICES := \
-    pb_m02s-user \
-    pb_m02s-userdebug \
-    pb_m02s-eng
+    omni_m02s-user \
+    omni_m02s-userdebug \
+    omni_m02s-eng
