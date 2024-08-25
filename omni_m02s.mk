@@ -6,9 +6,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 # Inherit some common pb stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
 
-#vendor/pb/config/common.mk for PBRP
-
-$(call inherit-product, vendor/omni/Android.mk)
 
 # Inherit from m02s device
 $(call inherit-product, device/samsung/m02s/device.mk)
