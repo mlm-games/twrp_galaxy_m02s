@@ -20,7 +20,7 @@ $(call inherit-product, device/samsung/m02s/device.mk)
 #$(call inherit-product, vendor/twrp/config/packages.mk)
 
 PRODUCT_DEVICE := m02s
-PRODUCT_NAME := pb_m02s
+PRODUCT_NAME := omni_m02s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := Galaxy M02s
 PRODUCT_MANUFACTURER := samsung
