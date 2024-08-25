@@ -8,7 +8,7 @@ $(call inherit-product, vendor/pb/config/common.mk)
 
 #vendor/pb/config/common.mk for PBRP
 
-$(call inherit-product, vendor/twrp/Android.mk)
+$(call inherit-product, vendor/omni/Android.mk)
 
 # Inherit from m02s device
 $(call inherit-product, device/samsung/m02s/device.mk)
