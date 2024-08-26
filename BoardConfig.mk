@@ -126,3 +126,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Workaround for error copying vendor files to recovery ramdisk
 #BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 #TARGET_COPY_OUT_VENDOR := vendor
+
+# PBRP flags
+PB_TORCH_PATH := "/sys/devices/virtual/camera/flash/rear_flash"
+PB_TORCH_MAX_BRIGHTNESS := 1
