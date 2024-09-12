@@ -20,4 +20,4 @@ If you are not able to get it to load to twrp, flash another vbmeta.img instead 
 You may need to factory reset or wipe data after using multidisabler and flashing magisk.zip (renaming the apk).
 Do not reboot after flashing magisk and factory resetting before checking for the "bootloader is already unlocked" text in developer options.
 
-Look at this [link](https://github.com/linux-msm/qdl) for qdl (for flashing in edl mode source code and what it needs from the device) to compile for fixing a device stuck in EDL mode. [Example](https://xdaforums.com/t/recovery-kernel-8-1-install-twrp-remove-encryption-get-magisk-on-visible-r2.3953494/)
+Look at this [link](https://github.com/linux-msm/qdl) and this [link](https://github.com/jeck24India/ROM2box-Android-Flashing-and-Repairing-tool) for qdl (for flashing in edl mode source code and what it needs from the device) to compile for fixing a device stuck in EDL mode. [Example](https://xdaforums.com/t/recovery-kernel-8-1-install-twrp-remove-encryption-get-magisk-on-visible-r2.3953494/)
