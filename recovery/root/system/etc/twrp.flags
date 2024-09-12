@@ -24,6 +24,13 @@ odm		    /odm		ext4							wait,logical,first_stage_mount
 /keydata         ext4    /dev/block/bootdevice/by-name/keydata          flags=display=keydata;wipeingui
 /keyrefuge       ext4    /dev/block/bootdevice/by-name/keyrefuge        flags=display=keyrefuge;wipeingui
 
+/aboot           emmc      /dev/block/bootdevice/by-name/aboot                flags=backup=1;display="Bootloader"
+/cmnlib          emmc      /dev/block/bootdevice/by-name/cmnlib               flags=backup=1;subpartitionof=/aboot
+/tz              emmc      /dev/block/bootdevice/by-name/tz                   flags=backup=1;subpartitionof=/aboot
+/rpm             emmc      /dev/block/bootdevice/by-name/rpm                  flags=backup=1;subpartitionof=/aboot
+/keymaster       emmc      /dev/block/bootdevice/by-name/keymaster            flags=backup=1;subpartitionof=/aboot
+/devcfg          emmc      /dev/block/bootdevice/by-name/devcfg               flags=backup=1;subpartitionof=/aboot
+
 # Removable storage
 /external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable
 /usb-otg	    auto		/dev/block/sda1     	/dev/block/sda			flags=display="USB-OTG";storage;wipeingui;removable
