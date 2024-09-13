@@ -2,7 +2,7 @@
 ro.display.series=Samsung Galaxy M02s
 
 # product/board stuff
-ro.product.board=QC_Reference_Phone
+ro.product.board=msm8953
 ro.board.platform=msm8953
 
 # USB and MTP stuff
