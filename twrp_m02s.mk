@@ -1,6 +1,7 @@
 
 # Takes from this file's removing .mk and 'twrp_'
-DEVICE_CODENAME := $(basename $(patsubst %_%, %, $(notdir $(MAKEFILE_LIST))))
+DEVICE_CODENAME := $(lastword $(subst /, ,$(lastword $(subst _, ,$(firstword $(subst ., ,$(MAKEFILE_LIST)))))))
+
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
