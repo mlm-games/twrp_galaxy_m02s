@@ -128,8 +128,8 @@ BOARD_USES_QCOM_DECRYPTION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 # TARGET_HW_DISK_ENCRYPTION := true
 # TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
-TW_FORCE_KEYMASTER_VER := true
-TW_NEW_ION_HEAP := true
+# TW_FORCE_KEYMASTER_VER := true
+# TW_NEW_ION_HEAP := true
 
 # Encryption: Setup it
 TW_INCLUDE_CRYPTO := true

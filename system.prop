@@ -13,19 +13,19 @@ sys.usb.controller=7000000.dwc3
 ro.boot.dynamic_partitions=true
 ro.boot.bootdevice=7824900.sdhci
 # Encryption
-keymaster_ver=3.0
-# ro.hardware.gatekeeper=mdfpp
-# ro.security.keystore.keytype=sakv2,gak
-# ro.hardware.keystore=mdfpp
-# ro.crypto.metadata_init_delete_all_keys.enabled=false
-# ro.crypto.volume.filenames_mode=aes-256-cts
-# ro.crypto.allow_encrypt_override=true
-# ro.crypto.dm_default_key.options_format.version=2
-# ro.crypto.volume.metadata.method=dm-default-key
+# keymaster_ver=3.0
+ro.hardware.gatekeeper=mdfpp
+ro.security.keystore.keytype=sakv2,gak
+ro.hardware.keystore=mdfpp
+ro.crypto.metadata_init_delete_all_keys.enabled=false
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.allow_encrypt_override=true
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.volume.metadata.method=dm-default-key
 
-# # Disable Rescue Party
-# persist.sys.disable_rescue=true
+# Disable Rescue Party
+persist.sys.disable_rescue=true
 
-# # AVB
-# ro.boot.avb_version=1.0
-# ro.boot.vbmeta.avb_version=1.0
+# AVB
+ro.boot.avb_version=1.0
+ro.boot.vbmeta.avb_version=1.0
