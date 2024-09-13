@@ -126,8 +126,8 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOARD_USES_QCOM_DECRYPTION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+# TARGET_HW_DISK_ENCRYPTION := true
+# TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
 
 # Encryption: Setup it
@@ -135,13 +135,6 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
-
-# File systems
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE   := ext4
-BOARD_SYSTEMIMAGE_PARTITION_TYPE     := ext4
-# Target copy out
-TARGET_COPY_OUT_VENDOR := vendor
 
 # Extras
 BOARD_ROOT_EXTRA_FOLDERS := persist efs sec_efs firmware
@@ -179,20 +172,20 @@ TARGET_USES_LOGD := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 
 
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libcryptfs_hw \
-    libdrm \
-    libion \
-    libkeymaster3device \
-    vendor.display.config@1.0 \
-    vendor.display.config@2.0
+# # Additional binaries & libraries needed for recovery
+# TARGET_RECOVERY_DEVICE_MODULES += \
+#     libcryptfs_hw \
+#     libdrm \
+#     libion \
+#     libkeymaster3device \
+#     vendor.display.config@1.0 \
+#     vendor.display.config@2.0
 
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libcryptfs_hw.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.qti.hardware.cryptfshw@1.0.so
+# TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+#     $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
+#     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+#     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so \
+#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libcryptfs_hw.so \
+#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
+#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.qti.hardware.cryptfshw@1.0.so
