@@ -1,9 +1,9 @@
 # mount point	fstype		device			device2				flags
 # Logical partitions
-system		/system		ext4							wait,logical,first_stage_mount
-vendor		/vendor		ext4							wait,logical,first_stage_mount
-product		/product	ext4							wait,logical,first_stage_mount
-odm		    /odm		ext4							wait,logical,first_stage_mount
+system		/system		ext4							fsflags="wait,logical,first_stage_mount"
+vendor		/vendor		ext4							fsflags="wait,logical,first_stage_mount"
+product		/product	ext4							fsflags="wait,logical,first_stage_mount"
+odm		    /odm		ext4							fsflags="wait,logical,first_stage_mount"
 
 # Physical partitions
 /metadata	ext4		/dev/block/bootdevice/by-name/metadata			flags=backup=1;display="Metadata"
@@ -29,10 +29,10 @@ odm		    /odm		ext4							wait,logical,first_stage_mount
 /usb-otg	    auto		/dev/block/sda1     	/dev/block/sda			flags=display="USB-OTG";storage;wipeingui;removable
 
 # Flashable partitions
-/system_image    emmc    /dev/block/mapper/system                    flags=backup=1;flashimg;display="System Image"
+/system_image    emmc    /dev/block/mapper/system                    flags=backup=0;flashimg;display="System Image"
 /vendor_image	 emmc	 /dev/block/bootdevice/by-name/vendor		 flags=backup=0;flashimg;display="Vendor Image"
-/product_image   emmc    /dev/block/mapper/product                   flags=backup=1;flashimg;display="Product Image"
-/odm_image       emmc    /dev/block/mapper/odm                       flags=backup=1;flashimg;display="Odm Image"
+/product_image   emmc    /dev/block/mapper/product                   flags=backup=0;flashimg;display="Product Image"
+/odm_image       emmc    /dev/block/mapper/odm                       flags=backup=0;flashimg;display="Odm Image"
 
 /modemst1_image  emmc    /dev/block/bootdevice/by-name/modest1       flags=backup=1;flashimg;display="MODEMST1"
 /modemst2_image  emmc    /dev/block/bootdevice/by-name/modest2       flags=backup=1;flashimg;display="MODEMST2"
