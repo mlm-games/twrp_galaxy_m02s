@@ -41,7 +41,7 @@ jobs:
     - name: Build TWRP Recovery
       uses: mlm-games/TWRP-recovery-build-action@main 
       with:
-        DEVICE_TREE: 'test-decrypt'
+        DEVICE_TREE_BRANCH: 'test-decrypt'
 
     - name: Upload Recovery Image
       uses: actions/upload-artifact@v4
