@@ -9,7 +9,7 @@ odm		    /odm		ext4							wait,logical,first_stage_mount
 /metadata	ext4		/dev/block/bootdevice/by-name/metadata			flags=backup=1;display="Metadata";wipeingui 
 /boot		emmc		/dev/block/bootdevice/by-name/boot			    flags=backup=1;flashimg=1;display="Boot"
 /recovery	emmc		/dev/block/bootdevice/by-name/recovery			flags=backup=1;flashimg=1;display="Recovery"
-/data		f2fs		/dev/block/bootdevice/by-name/userdata          flags=fileencryption=ice
+/data		f2fs		/dev/block/bootdevice/by-name/userdata          flags=encryptable=ice
 /cache		ext4		/dev/block/bootdevice/by-name/cache			    flags=backup=1;display="Cache";wipeingui
 /persist	ext4		/dev/block/bootdevice/by-name/persist			flags=fsflags=ro;display="Persist";backup=1
 /efs		ext4		/dev/block/bootdevice/by-name/efs			    flags=backup=1;display="EFS"
@@ -23,15 +23,15 @@ odm		    /odm		ext4							wait,logical,first_stage_mount
 /optics         ext4      /dev/block/bootdevice/by-name/optics
 /optics_image	emmc		/dev/block/bootdevice/by-name/optics		flags=backup=1;flashimg=1;display="Optics Image"
 /prism_image	emmc		/dev/block/bootdevice/by-name/prism			flags=backup=1;flashimg=1;display="Prism Image"
-/keydata         ext4    /dev/block/bootdevice/by-name/keydata          flags=display=keydata;wipeingui
-/keyrefuge       ext4    /dev/block/bootdevice/by-name/keyrefuge        flags=display=keyrefuge;wipeingui
+/keydata         ext4    /dev/block/bootdevice/by-name/keydata          flags=display=keydata;wipeingui;wipeduringfactoryreset;
+/keyrefuge       ext4    /dev/block/bootdevice/by-name/keyrefuge        flags=display=keyrefuge;wipeingui;wipeduringfactoryreset
 
-/aboot           emmc      /dev/block/bootdevice/by-name/aboot                flags=backup=1;display="Bootloader"
-/cmnlib          emmc      /dev/block/bootdevice/by-name/cmnlib               flags=backup=1;subpartitionof=/aboot
-/tz              emmc      /dev/block/bootdevice/by-name/tz                   flags=backup=1;subpartitionof=/aboot
-/rpm             emmc      /dev/block/bootdevice/by-name/rpm                  flags=backup=1;subpartitionof=/aboot
-/keymaster       emmc      /dev/block/bootdevice/by-name/keymaster            flags=backup=1;subpartitionof=/aboot
-/devcfg          emmc      /dev/block/bootdevice/by-name/devcfg               flags=backup=1;subpartitionof=/aboot
+# /aboot           emmc      /dev/block/bootdevice/by-name/aboot                flags=backup=1;display="Bootloader"
+# /cmnlib          emmc      /dev/block/bootdevice/by-name/cmnlib               flags=backup=1;subpartitionof=/aboot
+# /tz              emmc      /dev/block/bootdevice/by-name/tz                   flags=backup=1;subpartitionof=/aboot
+# /rpm             emmc      /dev/block/bootdevice/by-name/rpm                  flags=backup=1;subpartitionof=/aboot
+# /keymaster       emmc      /dev/block/bootdevice/by-name/keymaster            flags=backup=1;subpartitionof=/aboot
+# /devcfg          emmc      /dev/block/bootdevice/by-name/devcfg               flags=backup=1;subpartitionof=/aboot
 
 # Removable storage
 /external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable

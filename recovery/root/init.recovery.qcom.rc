@@ -52,10 +52,6 @@ on fs
     
     # Force ANDROID_ROOT to /system_root
     export ANDROID_ROOT /system_root
-
-   
-    on property:ro.crypto.type=file
-    setprop ro.crypto.volume.filenames_mode "aes-256-cts"
     
 
     chmod 0660 /dev/qseecom
