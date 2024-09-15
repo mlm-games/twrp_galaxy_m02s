@@ -148,9 +148,10 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_FORCE_KEYMASTER_VER := true
 TW_NEW_ION_HEAP := true
 
-# Encryption: Setup it
-# TW_INCLUDE_CRYPTO := true
-# TW_INCLUDE_CRYPTO_FBE := true
+# Encryption: Setup it (setting them to false causes fastbootd to work instead of commenting)
+TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO_FBE := false
+TW_INCLUDE_FBE_METADATA_DECRYPT := false
 # BOARD_USES_QCOM_FBE_DECRYPTION := true
 # BOARD_USES_METADATA_PARTITION := true
 
