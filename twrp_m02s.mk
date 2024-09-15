@@ -1,5 +1,5 @@
 
-# Takes from this file's removing .mk and 'twrp_'
+# Takes from this file's removing .mk and 'twrp_' but does not work for workflow action.
 DEVICE_CODENAME := $(lastword $(subst /, ,$(lastword $(subst _, ,$(firstword $(subst ., ,$(MAKEFILE_LIST)))))))
 
 
@@ -16,8 +16,8 @@ $(call inherit-product, device/samsung/m02s/device.mk)
 
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/m02s/recovery/root/vendor/firmware,recovery/root/vendor/firmware)
 
-PRODUCT_DEVICE := $(DEVICE_CODENAME)
-PRODUCT_NAME := twrp_$(DEVICE_CODENAME)
-PRODUCT_BRAND := Samsung
-PRODUCT_MANUFACTURER := Samsung
+PRODUCT_DEVICE := m02s
+PRODUCT_NAME := twrp_m02s
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := Galaxy M02s
