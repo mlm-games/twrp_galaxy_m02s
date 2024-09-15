@@ -12,6 +12,7 @@ sys.usb.controller=7000000.dwc3
 # Dynamic partition
 ro.boot.dynamic_partitions=true
 ro.boot.bootdevice=7824900.sdhci
+
 # Encryption
 keymaster_ver=3.0
 ro.hardware.gatekeeper=mdfpp

@@ -54,10 +54,13 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8953
 TARGET_NO_BOOTLOADER := true
+BOARD_VENDOR := samsung
+TARGET_SOC := msm8953
 
 # Build
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -67,7 +70,7 @@ PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 androidboot.usbconfigfs=true vmalloc=300M loop.max_part=7 androidboot.selinux=permissive audit=0 
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.bootdevice=7824900.sdhci androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 androidboot.usbconfigfs=true vmalloc=300M androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --header_version 2 --board SRPTG29A004
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -83,14 +86,28 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 # TARGET_KERNEL_ARCH := arm64
 # TARGET_KERNEL_CLANG_COMPILE := true
 
-# PlatformBOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
+# BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
 # BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 # BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 # BOARD_MKBOOTIMG_ARGS += --board $(BOARD_NAME)
+# BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+
 
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
+BOARD_USES_QCOM_HARDWARE := true
+
+AB_OTA_UPDATER := false
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -132,14 +149,17 @@ TW_FORCE_KEYMASTER_VER := true
 TW_NEW_ION_HEAP := true
 
 # Encryption: Setup it
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-BOARD_USES_METADATA_PARTITION := true
+# TW_INCLUDE_CRYPTO := true
+# TW_INCLUDE_CRYPTO_FBE := true
+# BOARD_USES_QCOM_FBE_DECRYPTION := true
+# BOARD_USES_METADATA_PARTITION := true
 
 # Extras
 BOARD_ROOT_EXTRA_FOLDERS := persist efs sec_efs firmware
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
 
 # TWRP Configuration
 RECOVERY_SDCARD_ON_DATA := true
@@ -147,7 +167,11 @@ TW_THEME := portrait_hdpi
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-
+# TW_SECONDARY_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_USE_TOOLBOX := true
+TW_Y_OFFSET := 70
+TW_H_OFFSET := -70
+TW_USE_NEW_MINADBD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
@@ -160,6 +184,9 @@ TW_NO_EXFAT_FUSE := true
 TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TARGET_USES_MKE2FS := true
+TW_NO_LEGACY_PROPS := true
+TW_NO_BIND_SYSTEM := true
 
 # TWRP Configuration: Brightness/CPU
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone17/temp
@@ -173,8 +200,20 @@ TARGET_USES_LOGD := true
 # Backups
 TW_BACKUP_EXCLUSIONS := /data/fonts
 
+# Others
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+TARGET_USES_UEFI := true
 
-# # Additional binaries & libraries needed for recovery
+# Sometimes twrp freezes and reboots, this might fix it
+TW_SCREEN_BLANK_ON_BOOT := true
+
+
+
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/m02s/bootimg.mk
+
+
+# # Additional binaries & libraries needed for encryption
 # TARGET_RECOVERY_DEVICE_MODULES += \
 #     libcryptfs_hw \
 #     libdrm \

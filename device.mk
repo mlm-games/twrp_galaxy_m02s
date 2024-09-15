@@ -17,6 +17,15 @@
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
 # Encryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
