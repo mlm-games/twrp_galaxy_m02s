@@ -59,7 +59,7 @@ jobs:
           ${{ env.OUTPUT_DIR }}/*.tar
           ${{ env.OUTPUT_DIR }}/*vbmeta*    
           ${{ env.OUTPUT_DIR }}/ramdisk-recovery.*
-        name: Unofficial ${{ github.workflow }} for ${{ env.DEVICE_NAME }} // ${{ format('{0:yyyyMMdd}', github.event.head_commit.timestamp) }}
+        name: Unofficial ${{ github.workflow }} for ${{ env.DEVICE_NAME }}
         tag_name: ${{ github.run_id }}
         body: |
           Build: ${{ env.MANIFEST_BRANCH }}
