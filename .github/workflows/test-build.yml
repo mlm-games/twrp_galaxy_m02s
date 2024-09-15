@@ -68,3 +68,10 @@ jobs:
           MD5 (img): ${{ env.MD5_IMG }}
           MD5 (zip): ${{ env.MD5_ZIP }}
         prerelease: ${{ inputs.mark_prerelease }}
+
+    - name: Run LDCHECK
+      uses: mlm-games/ldcheck-action@main
+      with:
+        OUTPUT_DIR: ${{ env.OUTPUT_DIR }}
+        LDCHECKPATH: system/bin/qseecomd
+
