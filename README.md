@@ -17,6 +17,8 @@ The touch doesnt work on inital boot but it works after turning the screen off f
 
 If you are not able to get it to load to twrp, flash another vbmeta.img instead of the google's null vbmeta.img
 
+Stock files (recovery.img.lz4, dtbo.img, boot.img): https://github.com/mlm-games/twrp_galaxy_m02s/releases/tag/v3.7.1-0.2
+
 You may need to factory reset or wipe data after using multidisabler and flashing magisk.zip (renaming the apk).
 Do not reboot after flashing magisk and factory resetting before checking for the "bootloader is already unlocked" text in developer options.
 
