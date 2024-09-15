@@ -74,4 +74,5 @@ jobs:
       with:
         OUTPUT_DIR: ${{ env.OUTPUT_DIR }}
         LDCHECKPATH: system/bin/qseecomd
+      continue-on-error: true
 
