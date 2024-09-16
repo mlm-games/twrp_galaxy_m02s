@@ -48,7 +48,9 @@ jobs:
       if: inputs.upload_releases == false || github.event_name != 'workflow_dispatch'
       with:
         name: TWRP-Recovery-${{ github.event.repository.name }}
-        path: ${{ env.OUTPUT_DIR }}/*.img
+        path: |
+          ${{ env.OUTPUT_DIR }}/*.img
+          ${{ env.OUTPUT_DIR }}/*.tar
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v2
