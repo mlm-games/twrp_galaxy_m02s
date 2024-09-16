@@ -12,9 +12,9 @@ odm		    /odm		ext4							fsflags="wait,logical,first_stage_mount"
 /data		f2fs		/dev/block/bootdevice/by-name/userdata
 /cache		ext4		/dev/block/bootdevice/by-name/cache			    flags=backup=1;display="Cache"
 /persist	ext4		/dev/block/bootdevice/by-name/persist			flags=fsflags=ro;display="Persist";backup=1
-/efs		ext4		/dev/block/bootdevice/by-name/efs			    flags=backup=1;display="EFS"
-/sec_efs	ext4		/dev/block/bootdevice/by-name/sec_efs			flags=backup=1;display="Sec EFS"
-/firmware	emmc		/dev/block/bootdevice/by-name/apnhlos			flags=backup=1;display="Firmware"
+#/efs		ext4		/dev/block/bootdevice/by-name/efs			    flags=backup=1;display="EFS"
+/efs	    ext4		/dev/block/bootdevice/by-name/sec_efs			flags=backup=1;display="EFS"
+/firmware	emmc		/dev/block/bootdevice/by-name/apnhlos			flags=backup=1;display="Firmware";fsflags="ro"
 /modem		emmc		/dev/block/bootdevice/by-name/modem			    flags=backup=1;display="Modem"
 /dsp		emmc		/dev/block/bootdevice/by-name/dsp
 /misc		emmc		/dev/block/bootdevice/by-name/misc
