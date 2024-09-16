@@ -47,7 +47,6 @@ Stock files (recovery.img.lz4, dtbo.img, boot.img): https://github.com/mlm-games
 | **Front Camera**  | 5 MP                                                     |
 | **Android OS**    | Android 10 with One UI Core 2.5                          |
 | **Release Date**  | January 2021                                             |
-| **Maintainer**    | *[Your Name or GitHub Username]*                         |
 
 ---
 
