@@ -28,10 +28,6 @@ DEVICE_PATH := device/samsung/m02s
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-# Android Verified Boot
-BOARD_AVB_ENABLE := false
-BOARD_BUILD_DISABLED_VBMETAIMAGE := true
-
 # Prebuilt AVB key for GSIs
 BOARD_AVB_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
@@ -98,8 +94,6 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 BOARD_USES_QCOM_HARDWARE := true
 
-AB_OTA_UPDATER := false
-
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
@@ -143,17 +137,8 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOARD_USES_QCOM_DECRYPTION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
-# TARGET_HW_DISK_ENCRYPTION := true
-# TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
-TW_FORCE_KEYMASTER_VER := true
-TW_NEW_ION_HEAP := true
-
-# Encryption: Setup it (setting them to false causes fastbootd to work instead of commenting)
-TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
-TW_INCLUDE_FBE_METADATA_DECRYPT := false
-# BOARD_USES_QCOM_FBE_DECRYPTION := true
-# BOARD_USES_METADATA_PARTITION := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
 # Extras
 BOARD_ROOT_EXTRA_FOLDERS := persist efs sec_efs firmware
@@ -175,19 +160,22 @@ TW_H_OFFSET := -70
 TW_USE_NEW_MINADBD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_CRYPTO := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
 TW_NO_EXFAT_FUSE := true
-TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TARGET_USES_MKE2FS := true
 TW_NO_LEGACY_PROPS := true
 TW_NO_BIND_SYSTEM := true
+TW_INCLUDE_CRYPTO := true
+TW_USE_FSCRYPT_POLICY := 1
+TW_SKIP_ADDITIONAL_FSTAB := true
+TW_FORCE_KEYMASTER_VER := true
+TW_NEW_ION_HEAP := true
 
 # TWRP Configuration: Brightness/CPU
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone17/temp
@@ -209,25 +197,20 @@ TARGET_USES_UEFI := true
 # Sometimes twrp freezes and reboots, this might fix it
 TW_SCREEN_BLANK_ON_BOOT := true
 
+# Additional binaries & libraries needed for recovery
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libcryptfs_hw \
+    libdrm \
+    libion \
+    libkeymaster3device \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0
 
-
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/m02s/bootimg.mk
-
-
-# # Additional binaries & libraries needed for encryption
-# TARGET_RECOVERY_DEVICE_MODULES += \
-#     libcryptfs_hw \
-#     libdrm \
-#     libion \
-#     libkeymaster3device \
-#     vendor.display.config@1.0 \
-#     vendor.display.config@2.0
-
-# TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-#     $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
-#     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-#     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so \
-#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libcryptfs_hw.so \
-#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
-#     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.qti.hardware.cryptfshw@1.0.so
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libcryptfs_hw.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.qti.hardware.cryptfshw@1.0.so
