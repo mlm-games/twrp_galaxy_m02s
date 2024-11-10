@@ -69,7 +69,6 @@ Stock files (recovery.img.lz4, dtbo.img, boot.img): https://github.com/mlm-games
 - ✅ ADB and MTP access
 - ✅ Flashing of zip and image files
 - ✅ Backup and restore functions
-- ✅ Decryption of data partition (if applicable)
 - ✅ Battery level display
 
 ---
